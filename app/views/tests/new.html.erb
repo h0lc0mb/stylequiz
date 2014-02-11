@@ -1,3 +1,8 @@
 <% provide(:title, 'Quiz') %>
-<h1>New Quiz</h1>
-<p>Find me in app/views/tests/new.html.erb</p>
+<h1>Style Quiz</h1>
+<h2>Click on the image you like best</h2>
+<center>
+	<%= link_to image_tag("item#{rand(100)}.jpg"), startquiz_path %>
+	&nbsp&nbsp&nbsp
+	<%= link_to image_tag("item#{rand(100)}.jpg"), startquiz_path %>
+</center>
