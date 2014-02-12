@@ -1,5 +1,7 @@
 Stylequiz::Application.routes.draw do
-  resources :tests
+  resources :tests do
+    resources :questions, only: [:create, :destroy]
+  end
 
   root to: 'tests#new'
 

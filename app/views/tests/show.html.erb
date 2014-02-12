@@ -1,8 +1,43 @@
 <% provide(:title, 'Quiz') %>
 <h1>Style Quiz</h1>
 <h2>Click on the image you like best</h2>
-<center>
-	<%= link_to image_tag("item#{rand(100)}.jpg"), @test %>
-	&nbsp&nbsp&nbsp
-	<%= link_to image_tag("item#{rand(100)}.jpg"), @test %>
-</center>
+
+<font color="white">
+	<%= num_a = var_a %>
+	<%= num_b = var_b %>
+</font>
+
+<div id="pictures">
+	<div class="row">
+		<div class="span3 offset3" align="right">
+
+			<%= form_for([@test, @question]) do |f| %>
+				<%= render 'shared/error_messages' %>
+
+				<%= f.hidden_field :item_a, value: num_a %>
+				<%= f.hidden_field :item_b, value: num_b %>
+				<%= f.hidden_field :win,    value: "a"   %>
+
+				<%= image_submit_tag("item#{num_a}.png") %>
+
+			<% end %>
+
+		</div>
+
+		<div class="span3">
+
+			<%= form_for([@test, @question]) do |f| %>
+				<%= render 'shared/error_messages' %>
+
+				<%= f.hidden_field :item_a, value: num_a %>
+				<%= f.hidden_field :item_b, value: num_b %>
+				<%= f.hidden_field :win,    value: "b"   %>
+
+				<%= image_submit_tag("item#{num_b}.png") %>
+
+			<% end %>
+
+		</div>
+
+	</div>
+</div>
