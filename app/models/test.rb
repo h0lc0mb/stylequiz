@@ -1,3 +1,5 @@
 class Test < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :started
+
+  validates :started, presence: true
 end

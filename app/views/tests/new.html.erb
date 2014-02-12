@@ -1,8 +1,14 @@
-<% provide(:title, 'Quiz') %>
-<h1>Style Quiz</h1>
-<h2>Click on the image you like best</h2>
-<center>
-	<%= link_to image_tag("item#{rand(100)}.jpg"), startquiz_path %>
-	&nbsp&nbsp&nbsp
-	<%= link_to image_tag("item#{rand(100)}.jpg"), startquiz_path %>
-</center>
+<% provide(:title, 'Start Quiz') %>
+<div class="center hero-unit">
+	<h1>TasteSeeker</h1>
+	<h2>
+		For each pair of images, click on the one you like best.
+	</h2>
+	<%= form_for(@test) do |f| %>
+		<%= render 'shared/error_messages' %>
+
+		<%= f.hidden_field :started, :value => true %>
+
+		<%= f.submit "Start!", class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>

@@ -1,9 +1,7 @@
 Stylequiz::Application.routes.draw do
-  get "tests/new"
+  resources :tests
 
-  root to: 'static_pages#home'
-
-  match '/startquiz', to: 'tests#new'
+  root to: 'tests#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
