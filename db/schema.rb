@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140214010107) do
+ActiveRecord::Schema.define(:version => 20140214015201) do
 
   create_table "questions", :force => true do |t|
     t.integer  "test_id"
     t.integer  "item_a"
     t.integer  "item_b"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.integer  "win",        :limit => 255
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "win"
   end
 
   add_index "questions", ["test_id", "created_at"], :name => "index_questions_on_test_id_and_created_at"
