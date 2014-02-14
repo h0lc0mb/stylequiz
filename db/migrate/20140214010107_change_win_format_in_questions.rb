@@ -1,6 +1,10 @@
 class ChangeWinFormatInQuestions < ActiveRecord::Migration
   def up
-  	change_column :questions, :win, :integer
+  	connection.execute(%q{
+    alter table questions
+    alter column win
+    type integer using cast(number as integer)
+  })
   end
 
   def down
