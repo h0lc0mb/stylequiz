@@ -3,7 +3,7 @@ class ChangeWinFormatInQuestions < ActiveRecord::Migration
   	connection.execute(%q{
     alter table questions
     alter column win
-    type integer using cast(number as integer)
+    type integer using cast(win as integer)
   })
   end
 
