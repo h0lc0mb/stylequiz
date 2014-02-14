@@ -16,4 +16,12 @@ class TestsController < ApplicationController
   	@test = Test.find(params[:id])
     @question = @test.questions.build
   end
+
+  def complete
+    @test = Test.find(params[:id])
+    @results = Question.where("test_id = ?", @test.id)
+    @results.each do |result|
+      @tagpair = Tagpair.where("item = ?", result.win)
+    end
+  end
 end

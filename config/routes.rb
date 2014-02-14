@@ -1,6 +1,7 @@
 Stylequiz::Application.routes.draw do
   resources :tests do
     resources :questions, only: [:create, :destroy]
+    match '/complete',   to: 'tests#complete'
   end
 
   root to: 'tests#new'
