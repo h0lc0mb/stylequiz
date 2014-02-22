@@ -1,17 +1,18 @@
 <% provide(:title, 'Complete') %>
 <div class="center hero-unit">
 	<h1>Quiz Complete!</h1>
-	<h2>
-		Thank you for taking the TasteSeeker Style Quiz
-	</h2>
-	<% @results.each do |result| %>
-		<% @tagpair = Tagpair.where("item = ?", result.win) %>
-		<% @tagpair.each do |tagpair| %>
-			<p>
-				<%= tagpair.tag_a %>
-				&
-				<%= tagpair.tag_b %>
-			</p>
-		<% end %>
-	<% end %>
+	<h2>Thank you for taking the TasteSeeker Style Quiz</h2>
 </div>
+
+<h3>Based on your results, we recommend these items for you:</h3>
+<% @recs.each do |rec| %>
+	<%= image_tag "item#{rec}.png" %>
+<% end %>
+
+<h3>Want more? Here are the other items you chose in your quiz:</h3>
+<% @extras.each do |extra| %>
+	<%= image_tag "item#{extra}.png" %>
+<% end %>
+
+<%= @recs %>
+<%= @max_tagpairs %>

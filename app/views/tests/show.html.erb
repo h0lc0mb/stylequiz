@@ -20,6 +20,7 @@
 				<%= f.hidden_field :item_a, value: num_a %>
 				<%= f.hidden_field :item_b, value: num_b %>
 				<%= f.hidden_field :win,    value: num_a   %>
+				<%= f.hidden_field :lose,    value: num_b   %>
 
 				<%= image_submit_tag("item#{num_a}.png") %>
 
@@ -35,6 +36,7 @@
 				<%= f.hidden_field :item_a, value: num_a %>
 				<%= f.hidden_field :item_b, value: num_b %>
 				<%= f.hidden_field :win,    value: num_b   %>
+				<%= f.hidden_field :lose,    value: num_a   %>
 
 				<%= image_submit_tag("item#{num_b}.png") %>
 
