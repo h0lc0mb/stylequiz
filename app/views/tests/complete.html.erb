@@ -9,10 +9,9 @@
 	<%= image_tag "item#{rec}.png" %>
 <% end %>
 
+<br><br><br><br>
+
 <h3>Want more? Here are the other items you chose in your quiz:</h3>
 <% @extras.each do |extra| %>
 	<%= image_tag "item#{extra}.png" %>
 <% end %>
-
-<%= @recs %>
-<%= @max_tagpairs %>

@@ -4,7 +4,9 @@ Stylequiz::Application.routes.draw do
     match '/complete',   to: 'tests#complete'
   end
 
-  root to: 'tests#new'
+  root to: 'static_pages#home'
+  match '/demo', to: 'tests#new'
+  #match '/how', to: 'static_pages#howitworks'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
