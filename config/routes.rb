@@ -6,7 +6,9 @@ Stylequiz::Application.routes.draw do
 
   root to: 'static_pages#home'
   match '/demo', to: 'tests#new'
-  #match '/how', to: 'static_pages#howitworks'
+  match '/what', to: 'static_pages#whatwedo'
+  match '/how', to: 'static_pages#howitworks'
+  match '/requests', to: 'static_pages#requestdemo'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

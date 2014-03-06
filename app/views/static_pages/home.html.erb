@@ -1,27 +1,24 @@
 <% provide(:title, 'Home') %>
 <h1>
 	TasteSeeker
-	<%= image_tag "logo1small.png" %>
 </h1>
 <h2>
 	Every customer is different. Knowing that is powerful.
 </h2>
 
-<div align="center">
-	<%= image_tag("stylenet.png") %>
-</div>
 <div class="row">
-	<div class="span5">
-		<h3>What we do</h3>
-		<p>
-			TasteSeeker provides custom analytics for retailers of all sizes. Our recommendation engines boost sales by discovering the unique personal taste of each customer.
-		</p>
-	</div>
-
-	<div class="span5 offset1">
-		<h3>Request a demo</h3>
-		<p>
-			See what TasteSeeker can do for your business. To request a demo, email us at <%= mail_to "info@tasteseeker.com" %>
-		</p>
+	<div align="center">
+		<div class="span4">
+			<%= link_to image_tag("holly-1.png"), what_path %>
+			<h3><%= link_to "What we do", what_path %></h3>
+		</div>
+		<div class="span4">
+			<%= link_to image_tag("holly-2.png"), how_path %>
+			<h3><%= link_to "How it works", how_path %></h3>
+		</div>
+		<div class="span4">
+			<%= link_to image_tag("holly-3.png"), requests_path %>
+			<h3><%= link_to "Request demo", requests_path %></h3>
+		</div>
 	</div>
 </div>
