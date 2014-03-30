@@ -15,13 +15,12 @@ class TestsController < ApplicationController
   def show
   	@test = Test.find(params[:id])
     @question = @test.questions.build
+    @count = Question.where("test_id = ?", @test.id).count
   end
 
   def complete
     @test = Test.find(params[:id])
     @results = Question.where("test_id = ?", @test.id)
-    
-    # Something is wrong...
     
     @win_tagpair_array = Array.new
     @results.each do |result|

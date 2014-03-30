@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140220011438) do
+ActiveRecord::Schema.define(:version => 20140329194434) do
 
   create_table "questions", :force => true do |t|
     t.integer  "test_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20140220011438) do
     t.string   "tag_b"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "link"
   end
 
   add_index "tagpairs", ["item"], :name => "index_tagpairs_on_item"

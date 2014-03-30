@@ -5,13 +5,23 @@
 </div>
 
 <h3>Based on your results, we recommend these items for you:</h3>
-<% @recs.each do |rec| %>
-	<%= image_tag "item#{rec}.png" %>
-<% end %>
+<div class="viewgallerylist">
+	<% @recs.each do |rec| %>
+		<% @link_items = Tagpair.where("id = ?", rec) %>
+		<% @link_items.each do |link_item| %>
+			<%= link_to image_tag("item#{rec}.png"), "#{link_item.link}", target: "_blank" %>
+		<% end %>
+	<% end %>
+</div>
 
 <br><br><br><br>
 
 <h3>Want more? Here are the other items you chose in your quiz:</h3>
-<% @extras.each do |extra| %>
-	<%= image_tag "item#{extra}.png" %>
-<% end %>
+<div class="viewgallerylist">
+	<% @extras.each do |extra| %>
+		<% @link_items = Tagpair.where("id = ?", extra) %>
+		<% @link_items.each do |link_item| %>
+			<%= link_to image_tag("item#{extra}.png"), "#{link_item.link}", target: "_blank" %>
+		<% end %>
+	<% end %>
+</div>
