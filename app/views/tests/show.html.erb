@@ -8,19 +8,6 @@
 	</center>
 </h3>
 
-<font color="white">
-	<%= num_a = var_a %>
-	<%= num_b = var_b %>
-	<% if num_b == num_a %>
-		<% if num_b = 100 %>
-			<% num_b = 1 + rand(98) %>
-		<% else %>
-			<% num_b = num_b + 1 %>
-		<% end %>
-	<% end %>
-	<%= num_b %>
-</font>
-
 <div id="pictures">
 	<div class="row">
 		<div class="span3 offset3" align="right">
@@ -28,12 +15,12 @@
 			<%= form_for([@test, @question]) do |f| %>
 				<%= render 'shared/error_messages' %>
 
-				<%= f.hidden_field :item_a, value: num_a %>
-				<%= f.hidden_field :item_b, value: num_b %>
-				<%= f.hidden_field :win,    value: num_a   %>
-				<%= f.hidden_field :lose,    value: num_b   %>
+				<%= f.hidden_field :item_a, value: @num_a %>
+				<%= f.hidden_field :item_b, value: @num_b %>
+				<%= f.hidden_field :win,    value: @num_a %>
+				<%= f.hidden_field :lose,   value: @num_b %>
 
-				<%= image_submit_tag("item#{num_a}.png") %>
+				<%= image_submit_tag("item#{@num_a}.png") %>
 
 			<% end %>
 
@@ -44,12 +31,12 @@
 			<%= form_for([@test, @question]) do |f| %>
 				<%= render 'shared/error_messages' %>
 
-				<%= f.hidden_field :item_a, value: num_a %>
-				<%= f.hidden_field :item_b, value: num_b %>
-				<%= f.hidden_field :win,    value: num_b   %>
-				<%= f.hidden_field :lose,    value: num_a   %>
+				<%= f.hidden_field :item_a, value: @num_a %>
+				<%= f.hidden_field :item_b, value: @num_b %>
+				<%= f.hidden_field :win,    value: @num_b %>
+				<%= f.hidden_field :lose,   value: @num_a %>
 
-				<%= image_submit_tag("item#{num_b}.png") %>
+				<%= image_submit_tag("item#{@num_b}.png") %>
 
 			<% end %>
 

@@ -16,6 +16,15 @@ class TestsController < ApplicationController
   	@test = Test.find(params[:id])
     @question = @test.questions.build
     @count = Question.where("test_id = ?", @test.id).count
+    @num_a = 1 + rand(99)
+    @num_b = 1 + rand(99)
+    if @num_b == @num_a
+      if @num_b == 100
+        @num_b = 1 + rand(98)
+      else
+        @num_b = @num_b + 1
+      end
+    end
   end
 
   def complete
